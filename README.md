@@ -10,6 +10,11 @@ The datasets used in this research project have been downloaded from the followi
 
 [AmeriFlux](https://ameriflux.lbl.gov)
 
+The locations can be seen on the map:
+
+<img width="372" alt="map" src="https://user-images.githubusercontent.com/53462948/178688240-772000f0-b457-4e1e-b076-8b64b44dc242.png">
+
+
 ## Data insights
 
 The main dataset "summary_wetland_gapfilled" contains half-hourly data for different climate features that can help to predict NEE. We turned this data into daily data by keeping the days that had at least 40 valid observations. The additional datasets for WTD based on the locations have also been incorporated. 
