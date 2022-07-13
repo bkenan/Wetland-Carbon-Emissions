@@ -17,10 +17,10 @@ The locations can be seen on the map:
 
 ## Data insights
 
-The main dataset "summary_wetland_gapfilled" contains half-hourly data for different climate features that can help to predict NEE. We turned this data into daily data by keeping the days that had at least 40 valid observations. The additional datasets for WTD based on the locations have also been incorporated. 
+The main dataset "summary_wetland_gapfilled" contains half-hourly data for different climate features that can help to predict NEE. We turned this data into daily data by keeping the days that had at least 40 valid observations. The additional datasets for Water table depth (WTD) based on the locations have also been incorporated. However, since we had a lot of important WTD data missing, we had to look for additional data sources and collected some more data from {mention the name of that source here}. We also combined additional features, the precipitations and sin/cos day of the year from the previously done works in this area.
 
-Features: Incoming shortwave radiation,  Air temperature,  Wind speed,  Soil temperature,  Vapor pressure deficit,  Carbon dioxide concentration in atmosphere,  Soil water content,  Water table depth  
-Target: NEE (Net exchange of ecosystem) for carbon dioxide  
+**Features**: Incoming shortwave radiation,  Air temperature,  Wind speed,  Soil temperature,  Vapor pressure deficit,  Carbon dioxide concentration in atmosphere,  Soil water content,  Water table depth, sin(doy), cos(doy)
+**Target**: NEE (Net exchange of ecosystem) for carbon dioxide  
 
 Number of missing variables initially:
 
