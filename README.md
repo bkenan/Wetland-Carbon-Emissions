@@ -9,3 +9,10 @@ We comprehensively quantify the wetland carbon emissions in the entire Southeast
 The datasets used in this research project have been downloaded from the following sources:
 
 [AmeriFlux](https://ameriflux.lbl.gov)
+
+## Data variables
+
+The main dataset "summary_wetland_gapfilled" contains half-hourly data for different climate features that can help to predict NEE. We turned this data into daily data by keeping the days that had at least 40 valid observations. The additional datasets for WTD based on the locations have also been incorporated. 
+
+Features: Incoming shortwave radiation,  Air temperature,  Wind speed,  Soil temperature,  Vapor pressure deficit,  Carbon dioxide concentration in atmosphere,  Soil water content,  Water table depth  
+Target: NEE (Net exchange of ecosystem) for carbon dioxide  
