@@ -22,7 +22,9 @@ The main dataset "summary_wetland_gapfilled" contains half-hourly data for diffe
 **Features**: Incoming shortwave radiation,  Air temperature,  Wind speed,  Soil temperature,  Vapor pressure deficit,  Carbon dioxide concentration in atmosphere,  Soil water content,  Water table depth, sin(doy), cos(doy)
 **Target**: NEE (Net exchange of ecosystem) for carbon dioxide  
 
+Number of total processed observations: 19,243
 Number of missing variables initially:
 
-<img width="263" alt="image" src="https://user-images.githubusercontent.com/53462948/178687316-9358cce3-2d97-43e5-bff4-a2970f3d465b.png">
+<img width="424" alt="missing values" src="https://user-images.githubusercontent.com/53462948/179900983-db755ab1-e773-4478-9051-5955eb2f6369.png">
+
 
