@@ -15,7 +15,11 @@ def main():
     """
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-
+    batchsize = 64
+    epochs = 200
+    MOMENTUM = 0.9
+    WEIGHT_DECAY = 0.005
+    LR = 0.001
 
     def dataloaders(X_train_scaled,y_train,X_test_scaled,y_test,batch_size):
         
@@ -55,7 +59,9 @@ def main():
             cost.append(running_loss)
         return cost
 
-
+    criterion = nn.MSELoss()
+    optimizer = optim.SGD(net.parameters(), momentum = MOMENTUM, weight_decay=WEIGHT_DECAY, lr=LR)
+    cost_path = train_model(net,criterion,optimizer,trainloader,epochs,device)
 
     def test_model(model,test_loader):
         with torch.no_grad(): 
