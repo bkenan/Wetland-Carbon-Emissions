@@ -50,7 +50,17 @@ def main():
 
     print(model_pipeline (models, k))
 
-    
+    #Random forest model hyperparameter tuning:
+
+    rf = RandomForestRegressor(max_depth=20, min_samples_split=5, min_samples_leaf=1, max_samples=1.0, max_features=0.5, n_estimators=500)
+    rf.fit(X_train_scaled, y_train)
+    rf_y_pred_test = rf.predict(X_test_scaled)
+    r2_rf = r2_score(y_test, rf_y_pred_test)
+    rmse_rf = mean_squared_error(y_test, rf_y_pred_test, squared=False)
+    print(round(r2_rf,2))
+    print(round(rmse_rf,2))
+
+
 
 if __name__ == '__main__':
     main()
