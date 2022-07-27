@@ -60,7 +60,22 @@ def main():
     print(round(r2_rf,2))
     print(round(rmse_rf,2))
 
+    def feature_importance(model,feat_names):
+        importances = model.feature_importances_
+        indices = np.argsort(importances)[::-1]
+        ranked_feats = []
+        for i in range(len(indices)):
+            feat_name = feat_names[indices[i]]
+            ranked_feats.append(feat_name)
+        ranking = pd.DataFrame()
+        ranking['Feat Index'] = indices
+        ranking['Feature'] = ranked_feats
+        ranking['Importance'] = np.sort(importances)[::-1]
+        return ranking.iloc[:5,:]
 
+    features = list(X_train.columns)
+    feature_importance(rf, features)
 
+   
 if __name__ == '__main__':
     main()
