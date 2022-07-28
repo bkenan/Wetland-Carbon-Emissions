@@ -86,6 +86,16 @@ def main():
     print(round(r2_xgb,2))
     print(round(rmse_xgb,2))
 
+    #MLP  model hyperparameter tuning:
+
+    mlp = MLPRegressor(hidden_layer_sizes=(250,), learning_rate_init=0.01, alpha=0.001)
+    mlp.fit(X_train_scaled, y_train)
+    mlp_y_pred_test = mlp.predict(X_test_scaled)
+    r2_mlp = r2_score(y_test, mlp_y_pred_test)
+    rmse_mlp = mean_squared_error(y_test, mlp_y_pred_test, squared=False)
+    print(round(r2_mlp,2))
+    print(round(rmse_mlp,2))
+
    
 
 if __name__ == '__main__':
