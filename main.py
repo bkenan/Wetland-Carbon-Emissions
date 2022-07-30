@@ -20,6 +20,19 @@ def load_model(PATH):
 model = load_model('./models/model.pkl')
 
 
+#Testing the loaded model:
+
+def test():
+    y_pred = model.predict(X_test_scaled)
+    r2 = r2_score(y_test, y_pred)
+    rmse = mean_squared_error(y_test, y_pred, squared=False)
+    return f'R2 is {round(r2,2)}', f'RMSE is {round(rmse,2)}'
+    
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 
 
 
