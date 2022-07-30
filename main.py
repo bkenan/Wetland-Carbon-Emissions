@@ -33,7 +33,37 @@ def test():
 def index():
     return render_template('index.html')
 
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        print(request.files['file'])
+        f = request.files['file']
+        df2 = pd.read_excel(f)
+        df2_copy = df2.copy()
+        df2_copy = feature_engineering1(df2_copy)
+        df2_copy = feature_engineering2(df2_copy)
+        df2_copy = onehot_encoder(df2_copy,onehotcols)
+        df2_copy = df2_copy.drop(['Date'],axis=1)
 
+
+        #Temporary solution for the sklearn bug:
+
+        df2_copy.rename(columns = {'month_1':'month_1.0', 
+                                    'month_2':'month_2.0',
+                                    'month_3':'month_3.0',
+                                    'month_4':'month_4.0',
+                                    'month_5':'month_5.0',
+                                    'month_6':'month_6.0',
+                                    'month_7':'month_7.0',
+                                    'month_8':'month_8.0',
+                                    'month_9':'month_9.0',
+                                    'month_10':'month_10.0',
+                                    'month_11':'month_11.0',
+                                    'month_12':'month_12.0',
+                                    }, inplace = True)
+
+
+        
 
 
 
