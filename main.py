@@ -63,7 +63,43 @@ def upload():
                                     }, inplace = True)
 
 
-        
+        df2_copy_scaled = scaler.transform(df2_copy)
+
+        #Getting predictions
+
+        predictions = model.predict(df2_copy_scaled)
+        df2['NEE'] = predictions.tolist()
+
+        #Rounding floats
+        r_cols = df2.select_dtypes(include=[np.number])
+        df2.loc[:, r_cols.columns] = np.round(r_cols,2)
+
+        pd.set_option('colheader_justify', 'center')
+
+
+
+        HEADER = '''
+        <html>
+            <head>
+                <link rel="stylesheet" href="./static/css/ll.css">
+            </head>
+            <body>
+            <ul>
+                <a href="{{ url_for('index') }}">Home page</a>
+            </ul>
+        '''
+        FOOTER = '''
+            </body>
+        </html>
+        '''
+
+        with open('./templates/test.html', 'w') as f:
+            f.write(HEADER)
+            f.write(df2.to_html(index=False, col_space=80, classes='df2'))
+            f.write(FOOTER)
+
+
+        return render_template('test.html')
 
 
 
