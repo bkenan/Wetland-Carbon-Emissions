@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!-- to be filled by the Python script -->
+
+<title>DATA+</title>
+<h1>  Duke Data+ Wetland Carbon Emissions</h1>
+
+<img alt="NEE" src="{{ url_for('static', filename='images/nee.png') }}" width="500" height="300">
+
+<p class="text"> 
+  The motivation is to minimize global warming in the US by applying machine learning. Based on the current climate analysis, future wetland carbon emissions will be predicted in a warming climate, so we are building the models to measure the potential expected values. This research will better assess wetland carbon emissions over the entire Southeast and provide critical information on future carbon budgets on regional scales. We comprehensively quantify the wetland carbon emissions in the entire Southeast USA using machine learning techniques and various climate datasets—including remote sensing data, climate observations, and hydrological model (PIHM-Wetland) outputs. The idea is to apply end-to-end data science techniques to establish the relationship between hydroclimatological variables and wetland carbon emissions at observational sites.
+</p>
+
+<h3 class="info"> Upload the excel/csv datasets in the following format to get predictions for Net exchange of ecosystem </h3>
+
+<table class="table">
+  <tr>
+    <td>Date (YYYY-MM-DD)</td>
+    <td>Site</td>
+    <td>Incoming shortwave radiation</td>
+    <td>Air temperature</td>
+    <td>Wind speed</td>
+    <td>Vapor pressure deficit</td>
+    <td>Soil water content</td>
+    <td>Soil temperature</td>
+    <td>Water table depth</td>
+  </tr>
+</table>
+
+<div class="main">
+
+  <form action="{{url_for('upload')}}" method=POST enctype=multipart/form-data>
+  <input type=file name=file>
+  <input type=submit value=Upload class="button" id="register" disabled="disabled">
+  </form>
+
+
+</div>
+
+
+
+{% endblock %}
