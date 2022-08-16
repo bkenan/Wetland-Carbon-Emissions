@@ -3,7 +3,10 @@
 This repo was created for Summer 2022 Data+ research project on Climate change. The motivation is to minimize global warming in USA by applying machine learning approaches. Based on the current climate analysis, future wetland carbon emissions will be predicted in a warming climate, so we are building the models to measure the potential expected values. Previous researches found that the emissions from wetland ecosystems provide a potentially positive feedback to global climate warming. However, human factors have contributed to rapid decline of wetlands throughout the world making the prompt actions necessary regarding the climate change.
 Previous traditional estimates of wetland carbon emissions were often obtained in a way that did not allow the researchers to fully understand the dynamics between environmental factors resulting in large uncertainties in the predictons. Machine learning is particularly promising in its ability to deduce
 relationships between factors. This research wil better assess wetland carbon emissions over the entire Southeast and provide critical information on future carbon budgets on regional scales.
-We comprehensively quantify the wetland carbon emissions in the entire Southeast USA using machine learning techniques and various climate datasets—including remote sensing data, climate observations, and hydrological model (PIHM-Wetland) outputs. The objective is to apply end-to-end data science techniques to establish the relationship between climate related variables and wetland carbon emissions at observational sites, and hence build a dynamic tool for thge measurements of the carbon emissions from the Southeast US wetland ecosystems that can provide the future research work with the required estimations and data.  
+
+## Motivation
+
+We comprehensively quantify the wetland carbon emissions in the entire Southeast USA using machine learning techniques and various climate datasets—including remote sensing data, climate observations, and hydrological model (PIHM-Wetland) outputs. The objective is to apply end-to-end data science techniques to establish the relationship between climate related variables and wetland carbon emissions at observational sites, and hence build a dynamic tool for thge measurements of the carbon emissions from the Southeast US wetland ecosystems that can provide the future research work with the required estimations and Net exchange of ecosystem (NEE) data.  
 
 
 ## Data Sources
@@ -34,7 +37,7 @@ Number of total processed observations: 19,243
 It turns out that the final features and target variables are the following after going through the pipeline.
 
 - **Features**: Incoming shortwave radiation,  air temperature,  wind speed,  soil temperature,  vapor pressure deficit, soil water content,  water table depth
-- **Target**: NEE (Net exchange of ecosystem) for carbon dioxide  
+- **Target**: NEE for carbon dioxide  
 
 The top 3 useful features are the incoming shortwave radiation, locations and soil water content based on the feature importance analysis.
 
