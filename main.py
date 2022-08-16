@@ -5,7 +5,8 @@ from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 from scripts.data_pipeline import scaler, feature_engineering1, feature_engineering2, onehot_encoder, onehotcols
-
+import folium
+from folium.features import DivIcon
 
 
 app = Flask(__name__)
@@ -32,6 +33,7 @@ def test():
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
@@ -76,16 +78,18 @@ def upload():
 
         pd.set_option('colheader_justify', 'center')
 
-
+        global df5
+        df5 = df2
 
         HEADER = '''
         <html>
             <head>
-                <link rel="stylesheet" href="./static/css/ll.css">
+                <link rel="stylesheet" href="./static/css/style.css">
             </head>
             <body>
-            <ul>
+            <ul class="ul_links">
                 <a href="{{ url_for('index') }}">Home page</a>
+                <a href="{{ url_for('display_map') }}" target="_blank">Map</a>
             </ul>
         '''
         FOOTER = '''
@@ -101,6 +105,45 @@ def upload():
 
         return render_template('test.html')
 
+
+@app.route('/display_map', methods=['GET', 'POST'])
+def display_map():
+    df_latlon = pd.read_excel('./data/latlon.xls') 
+    df3 = df5.merge(df_latlon, how='left', on='Site')
+    df_lon = df3.groupby('Site', as_index=False)['Longitude'].mean()
+    df_lat = df3.groupby('Site', as_index=False)['Latitude'].mean()
+    df_lat_lon = df_lat.merge(df_lon, how='left', on='Site')
+    df3 = df3.groupby('Site', as_index=False)['NEE'].mean()
+    df3 = df3.merge(df_lat_lon, how='left', on='Site')
+    df3['latlon'] = list(zip(df3.Latitude, df3.Longitude))
+
+
+    nee_map = folium.Map(
+        location=[30, -80],
+        zoom_start=5,
+    )
+
+        
+    for i in df3['latlon'].loc[:]:
+        index = df3.loc[df3['latlon'] == i].index[0]
+        site = df3['Site'].iloc[index]
+        nee_value = df3['NEE'].iloc[index]
+        nee_value = np.round(nee_value,2)
+        folium.Marker(i, icon=DivIcon(
+            icon_size=(10,10),
+            icon_anchor=(20,20),
+            html=f'<div style="font-size: 10pt; font-weight: bold; color : black">{site}: {nee_value}</div>',
+            )).add_to(nee_map)
+        
+        if nee_value>0:
+            nee_map.add_child(folium.CircleMarker(i, fill_color="green", color = 'green', radius=40))
+        else:
+            nee_map.add_child(folium.CircleMarker(i, fill_color="red", color = 'red', radius=40))
+
+        
+    nee_map.save('./templates/map.html')
+
+    return render_template('map.html')
 
 
 if __name__ == '__main__':

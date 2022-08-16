@@ -8,6 +8,9 @@ body{
     height: 100vh;
     color: rgb(1, 42, 33);
     text-align: center;
+    margin:0 auto;
+    justify-content: center;
+    display: flex;
 }
 
 #container {
@@ -72,9 +75,13 @@ color: white;
 padding: 14px 25px;
 margin-bottom: 5em;
 margin-top: 1em;
-text-align: center; 
 text-decoration: none;
 display: inline-block;
+}
+
+.ul_links{
+  position:absolute; 
+  left:10px;
 }
 
 tbody, thead {
@@ -83,4 +90,8 @@ tbody, thead {
 
 .text{
   margin-top:1em;
+}
+
+.df2{
+  justify-content: center;
 }
