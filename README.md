@@ -58,5 +58,5 @@ In a nutshell, users can upload their csv/excel files containing the required cl
 
 ## Demo
 
-![demo](https://user-images.githubusercontent.com/53462948/184876672-a4467b16-64c9-43c1-8f1d-15f5d62dfe64.gif)
+<img src="https://user-images.githubusercontent.com/53462948/184876672-a4467b16-64c9-43c1-8f1d-15f5d62dfe64.gif" width="800" height="450"/>
 
