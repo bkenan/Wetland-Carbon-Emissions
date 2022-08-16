@@ -2,7 +2,7 @@
 
 This repo was created for Summer 2022 Data+ research project on Climate change. The motivation is to minimize global warming in USA by applying machine learning approaches. Based on the current climate analysis, future wetland carbon emissions will be predicted in a warming climate, so we are building the models to measure the potential expected values. Previous researches found that the emissions from wetland ecosystems provide a potentially positive feedback to global climate warming. However, human factors have contributed to rapid decline of wetlands throughout the world making the prompt actions necessary regarding the climate change.
 Previous traditional estimates of wetland carbon emissions were often obtained in a way that did not allow the researchers to fully understand the dynamics between environmental factors resulting in large uncertainties in the predictons. Machine learning is particularly promising in its ability to deduce
-relationships between factors. This research wil better assess wetland carbon emissions over the entire Southeast and provide critical information on future carbon budgets on regional scales.
+relationships between factors. This research will better assess wetland carbon emissions over the entire Southeast and provide critical information on future carbon budgets on regional scales.
 
 ## Motivation
 
