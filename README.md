@@ -17,7 +17,7 @@ States and USGS Water Data were used in the data collection process.
 
 The locations can be seen on the map:
 
-<img width="372" alt="map" src="https://user-images.githubusercontent.com/53462948/178688240-772000f0-b457-4e1e-b076-8b64b44dc242.png">
+<img width="800" height="450" alt="map" src="https://user-images.githubusercontent.com/53462948/178688240-772000f0-b457-4e1e-b076-8b64b44dc242.png">
 
 
 ## Data insights
