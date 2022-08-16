@@ -47,7 +47,7 @@ Overall workflow for the modeling:
 
 ![ml](https://user-images.githubusercontent.com/53462948/184878026-89018867-f872-465f-adca-07e4fb37a8fd.png)
 
-Final model's architecture which is a meta-learning algorithm. The individual estimators provide outputs that are used as inputs by the final estimator to provide the outputs:
+Final model's architecture which is a meta-learning algorithm is described below. The individual estimators provide outputs that are used as inputs by the final estimator to provide the outputs:
 
 ![ensemble](https://user-images.githubusercontent.com/53462948/184873641-740d6819-0e80-4371-8ad9-531091a77d5f.png)
 
