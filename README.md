@@ -56,6 +56,11 @@ We have used HTML, CSS and JavaScript in the front-end for making this tool user
 
 In a nutshell, users can upload their csv/excel files containing the required climate data for the specific sites with the dates accordingly, and get the complementary data including the NEE immediately. Moreover, the real-time map is also provided in the separate window allowing the scientists to visualise the NEE change in the regions.
 
+Screenshot from a portion of the map in action:
+ 
+<img width="1312" alt="map" src="https://user-images.githubusercontent.com/53462948/184878406-9868cbd5-299c-42c4-9944-5eaef8b58a6a.png">
+
+
 ## Demo
 
 <img src="https://user-images.githubusercontent.com/53462948/184876672-a4467b16-64c9-43c1-8f1d-15f5d62dfe64.gif" width="800" height="450"/>
