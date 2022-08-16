@@ -53,7 +53,7 @@ Final model's architecture which is a meta-learning algorithm. The individual es
 
 ## Functionality
 
-We have used HTML, CSS and JavaScript in the front-end for making this tool user-friendly. This is the home page:
+We have used HTML, CSS and JavaScript in the front-end for making this tool user-friendly. Main logis is implemeted by Python Flask. This is the home page:
 
 <img width="1470" alt="home" src="https://user-images.githubusercontent.com/53462948/184875363-9980ff3e-f744-4764-82ee-37901963f0e6.png">
 
