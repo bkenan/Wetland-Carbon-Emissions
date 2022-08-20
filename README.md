@@ -32,7 +32,7 @@ Number of total processed observations: 19,243
 
 ## Data pipeline
 
-![pipeline](https://user-images.githubusercontent.com/53462948/184851369-1b5458a7-0e69-4ad5-a479-5f70b4af6755.png)
+![pipeline](https://user-images.githubusercontent.com/53462948/185767782-0bbed544-c5b5-4a23-b8bb-f2e069b32027.png)
 
 It turns out that the final features and target variables are the following after going through the pipeline.
 
